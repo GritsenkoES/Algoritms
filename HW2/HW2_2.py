@@ -1,0 +1,19 @@
+# Задание №2
+# https://drive.google.com/file/d/1BPeBidD9zmE6EBU1cwAXysRwJRxT-GTK/view?usp=sharing
+# Посчитать четные и нечетные цифры введенного натурального числа.
+#  Например, если введено число 34560, в нем 3 четные цифры (4, 6 и 0) и 2 нечетные (3 и 5).
+
+def even_odd(num, even=0, odd=0):
+    if num == 0:
+        return (f"Количество четных цифр равно {even}, количество нечетных  {odd}")
+    else:
+        cur_n = num % 10
+        num = num // 10
+        if cur_n % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+        return even_odd(num, even, odd)
+
+num = int(input("Введите число: "))
+print(even_odd(num))
